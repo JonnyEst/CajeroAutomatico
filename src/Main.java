@@ -17,26 +17,46 @@ public class Main {
         cajero.setSaldo(saldo);
 
         System.out.println("Su saldo es: "+ cajero.getSaldo().getSaldoAntiguo());
+        System.out.println(casos());
         System.out.println("¿Que desea realizar?");
-        menuCase();
+        System.out.println("1. Retirar dinero \n" +
+                "2. Enviar dinero \n" +
+                "3. Salir");
+
+        int valorAntiguo = cajero.getSaldo().getSaldoAntiguo();
+        System.out.println(valorAntiguo);
+
+
+    }
+
+
+    public static Saldo casos(){
+        Cajero cajero = new Cajero();
+        int numero= cajero.getSaldo().getSaldoAntiguo();
+        Saldo saldo = new Saldo();
+        saldo.getSaldoAntiguo();
+        return saldo;
     }
 
     public static void menuCase(){
         Scanner input = new Scanner(System.in);
+        Cajero cajero = new Cajero();
+        int valorAntiguo = cajero.getSaldo().getSaldoAntiguo();
 
-
-        System.out.println("1. Retirar dinero " +
-                "2. Enviar dinero " +
+        System.out.println("1. Retirar dinero \n" +
+                "2. Enviar dinero \n" +
                 "3. Salir");
 
         Saldo saldo = new Saldo();
 
         int num =input.nextInt();
-        switch (num){
+  /*      switch (num){
             case 1:
                 System.out.println("Digite el valor a retirar");
-                int num2=input.nextInt();
-                int res=retirarDinero(num2);
+                int num2 = input.nextInt();
+                int result = valorAntiguo-num2;
+                System.out.println("Resultado: "+result);
+                int res=0;
                 System.out.println("Exito! saldo actual: "+res );
               break;
             case 2:
@@ -44,13 +64,17 @@ public class Main {
               break;
             default:
                 System.out.println("Ha sido un placer atenderlo.");
-        }
+        }*/
 
     }
-    public static int retirarDinero(int num2){
-        Scanner input = new Scanner(System.in);
+    public static Integer retirarDinero(int num2){
         Saldo saldo = new Saldo();
-        int resultado=saldo.getSaldoAntiguo()-num2;
+        Cajero cajero = new Cajero();
+        int saldoViej=cajero.getSaldo().getSaldoAntiguo();
+        int num3;
+        int resource=6;
+        int resultado=saldoViej-num2;
+
         return resultado;
     }
 
